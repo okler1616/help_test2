@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>О проекте — iodzen</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    
+<header class="header">
+  <div class="brand">
+    <div class="logo"></div>
+    <span>iodzen</span>
+  </div>
+  
+      <nav class="nav">
+        <a href="index.html" class="">Главная</a>
+        <a href="blog.html" class="">Блог</a>
+        <a href="about.html" class="active">Проект</a>
+        <a href="cases.html" class="">Кейсы</a>
+        <a href="contacts.html" class="">Контакты</a>
+        <a href="blog.html" class="badge">Подписка</a>
+      </nav>
+    
+  <div class="actions">
+    <input class="search" placeholder="Поиск"/>
+    <button class="theme-toggle" id="themeToggle">Тема</button>
+  </div>
+  <div class="burger" id="burger">☰</div>
+</header>
+<div class="mobile" id="mobileMenu">
+  <a href="index.html">Главная</a>
+  <a href="blog.html">Блог</a>
+  <a href="about.html">Проект</a>
+  <a href="cases.html">Кейсы</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="blog.html" class="badge">Подписка</a>
+</div>
+
+    <section class="card"><div class="pad">
+      <h1>О проекте</h1>
+      <p class="muted">Мы пишем о технологиях, которые помогают людям и командам работать эффективнее и приватнее. Изучаем инструменты, делимся практикой и делаем её доступной.</p>
+      <div class="grid cols-3 mt-24">
+        <div class="card"><div class="pad"><h3>Честность</h3><p class="muted">Короткое описание принципа и как он отражается в материалах.</p></div></div><div class="card"><div class="pad"><h3>Польза</h3><p class="muted">Короткое описание принципа и как он отражается в материалах.</p></div></div><div class="card"><div class="pad"><h3>Простота</h3><p class="muted">Короткое описание принципа и как он отражается в материалах.</p></div></div>
+      </div>
+    </div></section>
+    <section class="mt-24">
+      <h2>Команда</h2>
+      <div class="grid cols-3 mt-16">
+        <div class="card"><div class="pad"><div class="cover" style="width:96px;height:96px;border-radius:999px"></div><h3 class="mt-16">Автор #1</h3><p class="muted">Короткая био и фокус тем.</p></div></div><div class="card"><div class="pad"><div class="cover" style="width:96px;height:96px;border-radius:999px"></div><h3 class="mt-16">Автор #2</h3><p class="muted">Короткая био и фокус тем.</p></div></div><div class="card"><div class="pad"><div class="cover" style="width:96px;height:96px;border-radius:999px"></div><h3 class="mt-16">Автор #3</h3><p class="muted">Короткая био и фокус тем.</p></div></div>
+      </div>
+    </section>
+    
+<footer class="footer">
+  <div class="grid">
+    <div class="col">
+      <h4>О проекте</h4>
+      <p class="muted">Независимая площадка о технологиях и цифровой культуре.</p>
+    </div>
+    <div class="col">
+      <h4>Навигация</h4>
+      <p><a href="blog.html">Блог</a></p>
+      <p><a href="cases.html">Кейсы</a></p>
+      <p><a href="blog.html">Архив</a></p>
+    </div>
+    <div class="col">
+      <h4>Подписка</h4>
+      <p class="muted">RSS/JSON Feed (локально)</p>
+    </div>
+    <div class="col">
+      <h4>Контакты</h4>
+      <p>hello@iodzen.ru</p>
+    </div>
+  </div>
+  <div class="copy">© 2025 iodzen</div>
+</footer>
+
+  </div>
+  
+<script>
+(function(){
+  const body = document.body;
+  const saved = localStorage.getItem('theme') || 'dark';
+  if(saved==='dark') body.classList.add('theme-dark');
+  document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+    body.classList.toggle('theme-dark');
+    localStorage.setItem('theme', body.classList.contains('theme-dark')?'dark':'light');
+  });
+  const burger=document.getElementById('burger');
+  const mobile=document.getElementById('mobileMenu');
+  burger&&burger.addEventListener('click', ()=>{ document.body.classList.toggle('show'); });
+})();
+</script>
+
+</body>
+</html>

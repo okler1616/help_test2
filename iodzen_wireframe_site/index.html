@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>iodzen — Главная</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    
+<header class="header">
+  <div class="brand">
+    <div class="logo"></div>
+    <span>iodzen</span>
+  </div>
+  
+      <nav class="nav">
+        <a href="index.html" class="active">Главная</a>
+        <a href="blog.html" class="">Блог</a>
+        <a href="about.html" class="">Проект</a>
+        <a href="cases.html" class="">Кейсы</a>
+        <a href="contacts.html" class="">Контакты</a>
+        <a href="blog.html" class="badge">Подписка</a>
+      </nav>
+    
+  <div class="actions">
+    <input class="search" placeholder="Поиск"/>
+    <button class="theme-toggle" id="themeToggle">Тема</button>
+  </div>
+  <div class="burger" id="burger">☰</div>
+</header>
+<div class="mobile" id="mobileMenu">
+  <a href="index.html">Главная</a>
+  <a href="blog.html">Блог</a>
+  <a href="about.html">Проект</a>
+  <a href="cases.html">Кейсы</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="blog.html" class="badge">Подписка</a>
+</div>
+
+    <section class="hero">
+      <h1>Технологии, приватность и практичные решения без лишнего шума</h1>
+      <p class="mt-16">Блог-платформа с регулярными публикациями о современных инструментах, инфраструктуре и цифровой культуре.</p>
+      <div class="mt-16">
+        <a class="btn" href="blog.html">Читать блог</a>
+        <a class="btn alt" href="blog.html" style="margin-left:8px">Подписаться</a>
+      </div>
+    </section>
+    <section class="mt-32">
+      <div class="flex items-center justify-between">
+        <h2>Свежие публикации</h2>
+        <a href="blog.html" class="muted">Все записи →</a>
+      </div>
+      <div class="grid cols-3 mt-16">
+        <article class="card"><div class="cover"></div><div class="pad"><div class="muted" style="font-size:12px">Категория • 12 сен 2025</div><h3>Мини-гайд по серверной оптике</h3><p class="muted">Краткий лид: 1–2 строки, чтобы объяснить ценность.</p></div></article>
+        <article class="card"><div class="cover"></div><div class="pad"><div class="muted" style="font-size:12px">Безопасность • 11 сен 2025</div><h3>Шифрование без фанатизма</h3><p class="muted">Почему достаточно базовой гигиены и как не перегнуть палку.</p></div></article>
+        <article class="card"><div class="cover"></div><div class="pad"><div class="muted" style="font-size:12px">DevOps • 10 сен 2025</div><h3>Docker без боли</h3><p class="muted">Набор практик, которые спасают в 80% случаев.</p></div></article>
+      </div>
+    </section>
+    <section class="mt-32">
+      <h2>Популярное за неделю</h2>
+      <div class="grid cols-4 mt-16">
+        <article class="card"><div class="cover"></div><div class="pad"><div class="muted" style="font-size:12px">Руководства</div><h3>Тема #1</h3><p class="muted">Короткий лид по теме #1.</p></div></article>
+        <article class="card"><div class="cover"></div><div class="pad"><div class="muted" style="font-size:12px">Руководства</div><h3>Тема #2</h3><p class="muted">Короткий лид по теме #2.</p></div></article>
+        <article class="card"><div class="cover"></div><div class="pad"><div class="muted" style="font-size:12px">Руководства</div><h3>Тема #3</h3><p class="muted">Короткий лид по теме #3.</p></div></article>
+        <article class="card"><div class="cover"></div><div class="pad"><div class="muted" style="font-size:12px">Руководства</div><h3>Тема #4</h3><p class="muted">Короткий лид по теме #4.</p></div></article>
+      </div>
+    </section>
+    <section class="grid cols-3 mt-32">
+      <div class="card"><div class="pad"><h2 style="font-size:28px">120K+</h2><p class="muted">чтений в год</p></div></div>
+      <div class="card"><div class="pad"><h2 style="font-size:28px">5–7</h2><p class="muted">новых постов в неделю</p></div></div>
+      <div class="card"><div class="pad"><h2 style="font-size:28px">~2.5 мин</h2><p class="muted">среднее время чтения</p></div></div>
+    </section>
+    
+<footer class="footer">
+  <div class="grid">
+    <div class="col">
+      <h4>О проекте</h4>
+      <p class="muted">Независимая площадка о технологиях и цифровой культуре.</p>
+    </div>
+    <div class="col">
+      <h4>Навигация</h4>
+      <p><a href="blog.html">Блог</a></p>
+      <p><a href="cases.html">Кейсы</a></p>
+      <p><a href="blog.html">Архив</a></p>
+    </div>
+    <div class="col">
+      <h4>Подписка</h4>
+      <p class="muted">RSS/JSON Feed (локально)</p>
+    </div>
+    <div class="col">
+      <h4>Контакты</h4>
+      <p>hello@iodzen.ru</p>
+    </div>
+  </div>
+  <div class="copy">© 2025 iodzen</div>
+</footer>
+
+  </div>
+  
+<script>
+(function(){
+  const body = document.body;
+  const saved = localStorage.getItem('theme') || 'dark';
+  if(saved==='dark') body.classList.add('theme-dark');
+  document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+    body.classList.toggle('theme-dark');
+    localStorage.setItem('theme', body.classList.contains('theme-dark')?'dark':'light');
+  });
+  const burger=document.getElementById('burger');
+  const mobile=document.getElementById('mobileMenu');
+  burger&&burger.addEventListener('click', ()=>{ document.body.classList.toggle('show'); });
+})();
+</script>
+
+</body>
+</html>
