@@ -1,126 +1,73 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>О проекте — iodzen</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная страница</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<div class="container">
-    
-<header class="header">
-  <div class="brand">
-    <div class="logo"></div>
-    <span>iodzen</span>
-  </div>
 <body>
-    <nav class="d-inline-flex mt-1 mt-md-0 ms-md-auto">
-    <a class="py-2 link-body-emphasis text-decoration-none" href="/">Главная страница</a>
-    <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/about">Мероприятия</a>
-    <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/contact">Документы</a>
-    
-</body>
- <header class="flex items-center justify-between">
+<div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>iodzen</span>
+      </div>
+      <nav class="d-inline-flex mt-1 mt-md-0 ms-md-auto">
+        <a class="py-2 link-body-emphasis text-decoration-none" href="/">Главная страница</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/about">Мероприятия</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/contact">Документы</a>
+      </nav>
+    </header>
+
+    <header class="flex items-center justify-between">
       <div>
         <h1>Блог</h1>
         <p class="muted">Новости, руководства и мнения</p>
       </div>
     </header>
     <div class="mt-24 grid" style="gap:18px">
-      
+      {% for post in posts %}
       <article class="grid" style="grid-template-columns:1fr;gap:16px">
         <div class="cover" style="border-radius:16px"></div>
         <div>
-          <a href="post.html"><h3>Заголовок публикации №1</h3></a>
-          <div class="muted" style="font-size:12px">12 сен 2025 • Руководства • #docker #webp</div>
-          <p class="muted">Лид на 2–3 строки, объясняющий пользу заметки и дающий контекст.</p>
+          <a href="{% url 'post_detail' post.slug %}"><h3>{{ post.title }}</h3></a>
+          <div class="muted" style="font-size:12px">{{ post.created_at|date:"d M Y" }}</div>
+          <p class="muted">{{ post.excerpt }}</p>
         </div>
       </article>
       <div class="hr"></div>
-      <article class="grid" style="grid-template-columns:1fr;gap:16px">
-        <div class="cover" style="border-radius:16px"></div>
-        <div>
-          <a href="post.html"><h3>Заголовок публикации №2</h3></a>
-          <div class="muted" style="font-size:12px">12 сен 2025 • Руководства • #docker #webp</div>
-          <p class="muted">Лид на 2–3 строки, объясняющий пользу заметки и дающий контекст.</p>
-        </div>
-      </article>
-      <div class="hr"></div>
-      <article class="grid" style="grid-template-columns:1fr;gap:16px">
-        <div class="cover" style="border-radius:16px"></div>
-        <div>
-          <a href="post.html"><h3>Заголовок публикации №3</h3></a>
-          <div class="muted" style="font-size:12px">12 сен 2025 • Руководства • #docker #webp</div>
-          <p class="muted">Лид на 2–3 строки, объясняющий пользу заметки и дающий контекст.</p>
-        </div>
-      </article>
-      <div class="hr"></div>
-      <article class="grid" style="grid-template-columns:1fr;gap:16px">
-        <div class="cover" style="border-radius:16px"></div>
-        <div>
-          <a href="post.html"><h3>Заголовок публикации №4</h3></a>
-          <div class="muted" style="font-size:12px">12 сен 2025 • Руководства • #docker #webp</div>
-          <p class="muted">Лид на 2–3 строки, объясняющий пользу заметки и дающий контекст.</p>
-        </div>
-      </article>
-      <div class="hr"></div>
-      <article class="grid" style="grid-template-columns:1fr;gap:16px">
-        <div class="cover" style="border-radius:16px"></div>
-        <div>
-          <a href="post.html"><h3>Заголовок публикации №5</h3></a>
-          <div class="muted" style="font-size:12px">12 сен 2025 • Руководства • #docker #webp</div>
-          <p class="muted">Лид на 2–3 строки, объясняющий пользу заметки и дающий контекст.</p>
-        </div>
-      </article>
-      <div class="hr"></div>
-      <article class="grid" style="grid-template-columns:1fr;gap:16px">
-        <div class="cover" style="border-radius:16px"></div>
-        <div>
-          <a href="post.html"><h3>Заголовок публикации №6</h3></a>
-          <div class="muted" style="font-size:12px">12 сен 2025 • Руководства • #docker #webp</div>
-          <p class="muted">Лид на 2–3 строки, объясняющий пользу заметки и дающий контекст.</p>
-        </div>
-      </article>
-      <div class="hr"></div>
+      {% empty %}
+      <p class="muted">Публикаций пока нет.</p>
+      {% endfor %}
     </div>
-    <div class="flex items-center justify-between mt-24">
-      <a class="badge" href="#">← Новее</a>
-      <div class="muted">Стр. 2 из 14</div>
-      <a class="badge" href="#">Старее →</a>
-    </div>
-    
-<footer class="footer">
-  <div class="grid">
-    <div class="col">
-      <h4>О проекте</h4>
-      <p class="muted">Независимая площадка о технологиях и цифровой культуре.</p>
-    </div>
-    <div class="col">
-      <h4>Навигация</h4>
-      <p><a href="blog.html">Блог</a></p>
-      <p><a href="cases.html">Кейсы</a></p>
-      <p><a href="blog.html">Архив</a></p>
-    </div>
-    <div class="col">
-      <h4>Подписка</h4>
-      <p class="muted">RSS/JSON Feed (локально)</p>
-    </div>
-    <div class="col">
-      <h4>Контакты</h4>
-      <p>hello@iodzen.ru</p>
-    </div>
-  </div>
-  <div class="copy">© 2025 iodzen</div>
-</footer>
 
-  </div>
-  
+    <footer class="footer">
+      <div class="grid">
+        <div class="col">
+          <h4>О проекте</h4>
+          <p class="muted">Независимая площадка о технологиях и цифровой культуре.</p>
+        </div>
+        <div class="col">
+          <h4>Навигация</h4>
+          <p><a href="/">Блог</a></p>
+          <p><a href="/about">Мероприятия</a></p>
+        </div>
+        <div class="col">
+          <h4>Подписка</h4>
+          <p class="muted">RSS/JSON Feed (локально)</p>
+        </div>
+        <div class="col">
+          <h4>Контакты</h4>
+          <p>hello@iodzen.ru</p>
+        </div>
+      </div>
+      <div class="copy">© 2025 iodzen</div>
+    </footer>
+</div>
+
 <script>
 (function(){
   const body = document.body;
@@ -136,5 +83,4 @@
 })();
 </script>
 </body>
-
 </html>
